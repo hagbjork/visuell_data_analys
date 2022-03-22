@@ -1,3 +1,4 @@
+from ast import Return
 from typing import *
 import numpy as np
 
@@ -12,7 +13,11 @@ def list_comprehension_squares(max_value: int) -> List:
     '''
     #TODO - gör en funktion med list comprehension som ger tillbaks listan av kvadrerade värden upp till och med 
     # max_value ([0, 1, 4, 9, 16... max_value**2])
-    pass
+    list = []
+    for i in range(max_value):
+        li = i**2
+        list.append(li)
+    return list
 
 def filtered_list_comprehension(max_value: int) -> List:
     '''
@@ -24,7 +29,12 @@ def filtered_list_comprehension(max_value: int) -> List:
     '''
 
     #TODO - Samma som ovan, men filtrera bort alla kvadrater med udda värden!
-    pass
+    list = []
+    for i in range(max_value):
+        li = i**2
+        if li % 2 == 0:
+                list.append(li)
+    return list
 
 def squared_tuples(max_value: int) -> List:
     '''
@@ -35,7 +45,11 @@ def squared_tuples(max_value: int) -> List:
     Returns: List of tuples 
     '''
     #TODO - gör en lista med tuples där index 0 i varje tuple är det ursprungliga värdet och index 1 är det kvadrerade värdet.
-    pass
+    list = []
+    for i in range(max_value):
+        li = i**2
+        tu = (
+    return list
 
 
 
@@ -87,7 +101,9 @@ def function_calling_function(func1, func2, max_value):
     pass
 
 
-
+print(list_comprehension_squares(5))
+print(filtered_list_comprehension(20))
+print(squared_tuples(5))
 
 
 
