@@ -45,10 +45,7 @@ def squared_tuples(max_value: int) -> List:
     Returns: List of tuples 
     '''
     #TODO - gör en lista med tuples där index 0 i varje tuple är det ursprungliga värdet och index 1 är det kvadrerade värdet.
-    list = []
-    for i in range(max_value):
-        li = i**2
-    return list
+    return [(x,x**2) for x in range(max_value)]
 
 
 
