@@ -18,12 +18,14 @@ for i in range(k):
     index_of_value = np.searchsorted(arr, value)
     #TODO - Your code here: Leta efter indexet i listan för det slumpade valuet
     #Stega genom listan, jämför värdet i varje index mot ditt slumpade value. Är de samma -> fortsätt loopa över k (förtydligande)
+    for value in value_list:
+        if value == index_of_value:
+         print(value, 'är talet vi letar efter')
+    
+    ''' for x in range(index_of_value):
+        if x == value: break '''
 
 stop_time = time.time()
 time_elapsed = stop_time - start_time
 
-
-
-
 print(f'Total time elapsed: {time_elapsed}')
-
