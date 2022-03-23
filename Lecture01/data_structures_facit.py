@@ -11,7 +11,7 @@ def list_comprehension_squares(max_value: int) -> List:
     Returns: List of squared values starting at 0 incremented by 1 at each step.
     '''
     #TODO - gör en funktion med list comprehension som ger tillbaks listan av kvadrerade värden upp till och med 
-    # max_value ([0, 1, 4, 9, 16... max_value**2])
+    # max_value ([0, 1, 4, 9, 16... max_value**2])    
     return [x**2 for x in range(max_value)]
 
 

@@ -9,27 +9,24 @@ import seaborn as sn
 from sklearn import decomposition
 
 
-
-
-data = pd.read_csv("train.csv")
+data = pd.read_csv("Lecture02/mnist.csv")
 data = data[0:1000]
 labels = data.pop("label")
 print(data.head())
+
+# 1. standardizing the data
 standardized_data = StandardScaler().fit_transform(data)
-print(standardized_data.shape)
-#labels = data['label']
-
-
-
 sample_data = standardized_data
 print(sample_data.shape)
-sample_data2 = data[1000:2000]
-print(sample_data2.shape)
+
+# 2. Covariance matrix
+# A^T * A
 # matrix multiplication using numpy
 covar_matrix = np.matmul(sample_data.T , sample_data)
+print('The shape of variance matrix:', covar_matrix.shape)
 
 
-
+# 3. Compute eigenvalue and eigenvector
 # the parameter ‘eigvals’ is defined (low value to heigh value) 
 # eigh function will return the eigen values in asending order
 # this code generates only the top 2 (782 and 783)(index) eigenvalues.

@@ -4,9 +4,9 @@
 
 #### 1. Skapa ett nytt conda environment
 
-Skapa ditt environment och installera `python` och `ipykernel`. __Välj själv namn istället för NEW_ENV__. `ipykernel` är för att skapa en Jupyter Notebook.
+Skapa ditt environment och installera `python` och `ipykernel`. __Välj själv namn istället för NEW_ENV__.
 
-    conda create --name NEW_ENV python=3.9 ipykernel
+    conda create --name NEW_ENV python
 
 #### 2. Aktivera din NYA environment
 
