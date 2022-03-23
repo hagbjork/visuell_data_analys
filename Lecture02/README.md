@@ -11,6 +11,6 @@
 ### Kod
 
 * **curse_of_dimensionality.py** – *demo.* Om problem med kNN och tillväxthastighet
-* pca.py
-* pcaKNN.py
-* pcaMain.py
+* **pca.py** - *demo*. Principal component analysis PCA
+* **pca_main.py** *- övning.* Inspiration till hur man kan lösa uppgiften
+* **pca_knn.py** - *övning*. Inspiration till hur man kan lösa uppgiften
