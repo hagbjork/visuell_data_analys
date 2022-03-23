@@ -7,17 +7,19 @@ def main():
     patient1 = Patient(2,"Nils","Karlsson", condition = 2.0)
     patient2 = Patient(2,"Lina","Zhang", condition = 9.0)
 
-
-    doctor1.add_patients([patient1,patient2])
-
+    
+    doctor1.add_patients([patient1, patient2])
+    
     print(doctor1.patients)
-    print(patient1.doctor.first_name)
-
-    print(doctor1.last_name)
-
-    print(Person.total_population)
+    
     for patient in doctor1.patients:
-        print(patient.condition)
+        print(f'Pasient {patient.first_name} {patient.last_name} med condition {patient.condition}')
+        
+    print(f'{patient1.first_name} läkare: {patient1.doctor.first_name}')
+    
+    print('Läkarens efternamn:', doctor1.last_name)
+    
+    print('Antal personer:', Person.total_population)
 
     doctors_data = [[26, "Carl", "Jendle", "Patologi"], (32, "Henrik","Stenbom", "Kardiologi"),(25, "Lina", "Zhang", "Radiology")]
 
