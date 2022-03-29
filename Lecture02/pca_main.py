@@ -9,7 +9,7 @@ def main():
     plot_explained_variance(X_train)
 
     #Utan PCA
-    run_PCA_kNN(X_train, Y_train)
+    #run_PCA_kNN(X_train, Y_train)
 
     #Med PCA
     run_PCA_kNN(X_train, Y_train, n_components = 100)
