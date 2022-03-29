@@ -4,5 +4,5 @@ pandas
 scikit-learn
 scipy
 seaborn
-
+umap-learn
 

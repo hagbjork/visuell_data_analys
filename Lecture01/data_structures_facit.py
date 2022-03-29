@@ -12,7 +12,7 @@ def list_comprehension_squares(max_value: int) -> List:
     '''
     #TODO - gör en funktion med list comprehension som ger tillbaks listan av kvadrerade värden upp till och med 
     # max_value ([0, 1, 4, 9, 16... max_value**2])    
-    return [x**2 for x in range(max_value)]
+    return [x**2 for x in range(max_value + 1)]
 
 
 def filtered_list_comprehension(max_value: int) -> List:

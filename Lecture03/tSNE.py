@@ -7,7 +7,7 @@ from sklearn.decomposition import PCA
 import warnings
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv("train.csv")
+data = pd.read_csv("Lecture03/mnist.csv")
 train = data[0:1000]
 labels = train.pop("label")
 
