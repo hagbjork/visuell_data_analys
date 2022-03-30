@@ -1,9 +1,7 @@
-import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
-from sklearn.cluster import DBSCAN
 from umap import UMAP
 from sklearn.manifold import TSNE
 from sklearn.pipeline import make_pipeline
@@ -33,32 +31,26 @@ conf_mat = confusion_matrix(y_test, predictions)
 ax = sns.heatmap(conf_mat)
 plt.show()
 
+pca = PCA(n_components=2)
+pca.fit(X_train)
+pca.transform(X_test)
 
-
-#pca = PCA(n_components=2)
-
-#pca.fit(X_train)
-
-#pca.transform(X_test)
-
-#X_test = pca.transform(X_train)
+X_test = pca.transform(X_train)
 
 print(X_test.shape)
 print(X_test[:, 0].shape)
 print(X_test[:, 1].shape)
-#plt.scatter(X_test[:, 0], X_test[:, 1], c = y_train)
-
-##plt.show()
+plt.scatter(X_test[:, 0], X_test[:, 1], c = y_train)
+plt.show()
 
 
 tsne= TSNE(n_components=2)
 
-#X_train = tsne.fit_transform(X_train)
+X_train = tsne.fit_transform(X_train)
+print(X_train.shape)
 
-#print(X_train.shape)
-
-#plt.scatter(X_train[:, 0], X_train[:, 1], c = y_train)
-#plt.show()
+plt.scatter(X_train[:, 0], X_train[:, 1], c = y_train)
+plt.show()
 
 umap_2d = UMAP(random_state=2 )
 umap_2d.fit(X_train)
@@ -67,8 +59,8 @@ projections = umap_2d.transform(X_train)
 print(projections.shape)
 
 
-#plt.scatter(projections[:, 0], projections[:, 1], c = y_train)
-#plt.show()
+plt.scatter(projections[:, 0], projections[:, 1], c = y_train)
+plt.show()
 
 
 

@@ -1,10 +1,6 @@
 import numpy as np
-from sklearn.decomposition import PCA
 from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-from sklearn.cluster import DBSCAN
-from umap import UMAP
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
@@ -12,10 +8,8 @@ from sklearn.model_selection import cross_val_score
 
 data = load_wine()
 
-
 labels = data.target
 features = data.data
-
 
 def run_kNN(features, labels, k):
     """

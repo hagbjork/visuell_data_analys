@@ -16,21 +16,23 @@ diabetes_data = load_diabetes()
 
 features = diabetes_data.data
 labels = diabetes_data.target
+print(labels[:5])
 print(features.shape)
 
-#print(features)
+print(features)
 features = StandardScaler().fit_transform(features)
-#print(features)
-#print(features.shape)
+print(features)
+print(features.shape)
 
 pca = PCA(n_components = 6)
 
-#features = pca.fit_transform(features)
+features = pca.fit_transform(features)
 
-#print(features.shape)
+print(features.shape)
 
 
-#plt.scatter(features[:,0], features[:,1], c = labels)
-#plt.plot(np.cumsum(pca.explained_variance_ratio_))
-#print(pca.explained_variance_ratio_)
-#plt.show()
+plt.scatter(features[:,0], features[:,1], c = labels)
+plt.plot(np.cumsum(pca.explained_variance_ratio_))
+print(pca.explained_variance_ratio_)
+#plt.colorbar(boundaries=np.arange(11)-0.5).set_ticks(np.arange(10))
+plt.show()
