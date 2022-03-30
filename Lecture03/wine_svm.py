@@ -1,10 +1,6 @@
 import numpy as np
-from sklearn.decomposition import PCA
 from sklearn.datasets import load_wine
 from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-from sklearn.cluster import DBSCAN
-from umap import UMAP
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn import metrics
 from sklearn.model_selection import cross_val_score
@@ -17,9 +13,9 @@ labels = data.target
 features = data.data
 
 
-def run_kNN(features, labels, k):
+def run_SVM(features, labels, k):
     """
-    Performs kNN on 
+    Performs SVM on 
     """
     results = []
     best_result = -1
@@ -44,10 +40,5 @@ def run_kNN(features, labels, k):
     return results
 
 
-results = run_kNN(features, labels, 9)
+results = run_SVM(features, labels, 9)
 print(results)
-
-        
-
-        
-        
