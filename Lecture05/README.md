@@ -1,6 +1,6 @@
 # Föreläsning 5
 
-### Kod
-
-* dbscan.py - demo om DBSCAN
-* diabetes_pca.py - diabetes data med PCA. Göra till ipynb och skapa colorbar, cumsum egen plot? Stämmer labels?
+* **dbscan.ipynb** - Demo om DBSCAN
+* **DBSCAN.pdf** - Teori om DBSCAN, Silhouette Score och Davies-Bouldin Score
+* **Demo_DBSCAN.mp4** - Inspelning demostation dbscan.ipynb
+* **Teori_DBSCAN.mp4** - Inspelning av teorietisk genomgång av DBSCAN

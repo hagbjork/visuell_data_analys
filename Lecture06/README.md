@@ -2,6 +2,8 @@
 
 ### Kod
 
-* DBSCAN.pdf - uppgift med diabetes.csv. PCA, UMAP, t-SNE, DBSCAN, Silhouette Score, Davies Bouldin Index.
-* pca_plotter.py - mall för att plotta PCA. Inkluderad i diabetes_dbscan.py
-* diabetes_dbscan.py - lösningsförslag på större uppgift
+* **DBSCAN_exercise.pdf** - Uppgift med diabetes.csv. Tema: PCA, UMAP, t-SNE, DBSCAN, Silhouette Score, Davies Bouldin Index.
+* **diabetes_dbscan.py** - Lösningsförslag på uppgiften. KOMMER SNART
+* **diabetes_pca.py** - Lösningsförslag av PCA. KOMMER SNART
+* **diabetes.csv** - Dataset för binär klassifikation av diabetes
+* **pca_plotter.py** - Mall för att plotta PCA. Inkluderad i diabetes_dbscan.py. KOMMER SNART
