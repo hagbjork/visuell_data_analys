@@ -11,8 +11,8 @@ library(recipes)
 
 #install.packages("GGally")
 
-library("ggplot2")                     
-library("GGally")
+library(ggplot2)                     
+library(GGally)
 
 library(cluster)
 library(caret)
@@ -33,7 +33,7 @@ library(factoextra)
 ######################
 print(names(penguins))
 
-df <- as.tibble(penguins)
+df <- as_tibble(penguins)
 
 print(head(df))
 
@@ -51,7 +51,7 @@ print(binary_df[1:nr_of_rows, 1:length(names(penguins))])
 non_na_df <- na.omit(df)
 
 #Har vi verkligen hanterat alla NA-värden?
-#print(any(is.na(non_na_df)))
+print(any(is.na(non_na_df)))
 
 
 
