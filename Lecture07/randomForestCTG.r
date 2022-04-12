@@ -40,7 +40,6 @@ table(data$NSP)
 set.seed(2)
 
 #Vi delar upp i 70% train och 30% test set med bootstrapping
-
 indices <- sample(2, nrow(data), replace = TRUE, prob = c(0.7, 0.3))
 rows <- sample(nrow(data))
 
@@ -83,3 +82,4 @@ varImpPlot(forest_classifier)
 
 #Vi kan också intressera oss för de 10 viktigaste
 varImpPlot(forest_classifier, sort = TRUE, n.var = 10)
+
