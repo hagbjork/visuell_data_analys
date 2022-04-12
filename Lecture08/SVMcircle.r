@@ -47,27 +47,21 @@ svmfit = svm(label ~ x_vals + y_vals, data = all_data,
 plot(svmfit, all_data)
 print(svmfit)
 
-#all_data <- rbind(data_outside, data_within)
-
-print(all_data)
-all_data$label <- factor(all_data$label)
-
-sc <- ggplot(all_data, aes(x_vals, y_vals)) + geom_point(aes(color = label))
-sc
 
 #Centrerar - visar också vad som händer om vi inte gör det
 all_data <- all_data %>% mutate(radius = sqrt((x_vals-mean(x_vals))^2
                                 + (y_vals-mean(y_vals))^2),angle = atan2((y_vals - mean(all_data$y_vals)),
                                                                          (x_vals- mean(all_data$x_vals))))
 
-#all_data <- all_data %>% mutate(radius = sqrt((x_vals)^2
-#                                              + (y_vals-mean(y_vals))^2),angle = atan2((y_vals - mean(all_data$y_vals)),
-#                                                                                       (x_vals- mean(all_data$x_vals))))
+all_data <- all_data %>% mutate(radius = sqrt((x_vals)^2
+                                             + (y_vals-mean(y_vals))^2),angle = atan2((y_vals - mean(all_data$y_vals)),
+                                                                                      (x_vals- mean(all_data$x_vals))))
 
 print(all_data)
 
 sc <- ggplot(all_data, aes(radius, angle)) + geom_point(aes(color = label))
 sc
+
 all_data$x_vals <- NULL
 all_data$y_vals <- NULL
 

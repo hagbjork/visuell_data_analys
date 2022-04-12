@@ -1,6 +1,7 @@
 # Föreläsning 8
 
-* **faithful.csv** - används i old_faithful.r. Eruption and waiting time of the geyser Old Faithful
-* **gaussianAndCircleGen.r** - demo med klustering och SVM
-* **oldFaithful.r** - klustring
-* **penguins.r** - PCA, k-means och annan klustering
+* **faithful.csv** - Data. Används i old_faithful.r. Eruption time and waiting time between consecutive eruptions of the geyser Old Faithful
+* **GMMoldFaithful.r** - Demo. Klustring av Old Faithful datan med Gaussian Mixture Models (GMM)
+* **penguins.r** - Klustering med PCA, k-means, GMM
+* **SVM_GMM.pdf** - Teori. Konceptuell genomgång av klassificeringsalgoritmen Support Vector Machine (SVM) och klustringsmetoden Gaussian Mixture Models (GMM)
+* **SVMcircle.r** - Demo. SVM models

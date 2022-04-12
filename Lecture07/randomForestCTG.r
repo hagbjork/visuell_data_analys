@@ -70,7 +70,8 @@ head(real_predictions)
 head(test$NSP)
 
 confusionMatrix(real_predictions, test$NSP)
-
+conf <- confusionMatrix(real_predictions, test$NSP)
+conf$byClass
 
 #Error rates av random forest:
 #Vi får summering av vår classifier där vi kan se att vi egentligen inte hade behövt

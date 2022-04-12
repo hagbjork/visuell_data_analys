@@ -178,7 +178,7 @@ fviz_nbclust(kmeans_data, kmeans, method='silhouette')
 
 
 ######################
-#GMM
+#GaussianMixtureModels
 #####################
 
 data <- kmeans_data
