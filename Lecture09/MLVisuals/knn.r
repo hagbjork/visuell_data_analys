@@ -3,6 +3,7 @@ library(plotly)
 library(tidyverse)
 library(tidymodels)
 library(plyr)
+library(kknn)
 
 
 data(iris) # We will use the iris data, which is included in R by default

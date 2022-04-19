@@ -15,14 +15,14 @@ head(df)
 df$idx <- 1:222
 
 
-df$hover <- with(df, paste(COUNTRY, '<br>', 'Code', CODE, '<br>', 'Index', idx))
+df$hover <- with(df, paste(COUNTRY, 'Code:', CODE, 'Index:', idx))
 
 fig <- plot_geo(df)
 
-
+# 
 
 fig <- fig %>% add_trace(
-  z = ~GDP..BILLIONS., text = ~hover, locations = ~CODE,
+  z = ~GDP..BILLIONS., locations = ~CODE, text = ~hover,
   color = ~GDP..BILLIONS., colors = 'Purples'
 )
 fig <- fig %>% colorbar(title = "Millions USD")

@@ -1,9 +1,10 @@
 #install.packages('rjson')
 library(rjson)
+library(jsonlite)
 
 #Exempel - geografisk data 
 #Ladda in json data
-data <- fromJSON("test.json")
+data <- fromJSON(file="https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json")
 data$features[[1]]
 
 #Ladda in CSV - ska matcha FIPS
@@ -18,7 +19,8 @@ fig <- fig %>% add_trace(
   type="choropleth",
   geojson=data,
   locations=df$fips,
-  z=df$unemp
+  z=df$unemp,
+  colorscale="Viridis"
 )
 
 fig <- fig %>% colorbar(title = "Unemployment Rate (%)")

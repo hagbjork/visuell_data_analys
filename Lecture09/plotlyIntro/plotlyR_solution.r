@@ -4,7 +4,6 @@
 
 library(tidyverse)
 library(plotly)
-library(tidyverse)
 library(lubridate)
 
 data_daywise <- read_csv("daywise.csv")
@@ -34,11 +33,11 @@ plot_ly(data_daywise, x = ~Date, y = ~Confirmed,
 fig <- plot_ly(data_daywise, x=~ Date)
 #Facit: (Källan slutade bara att rapportera recovered cases 
 #är förklaringen)
-fig <- fig %>% add_trace(y =~ Confirmed, name = 'Confirmed', 
+fig <- fig %>% add_trace(y = ~Confirmed, name = 'Confirmed', 
                          mode = 'lines', type = 'scatter')
-fig <- fig %>% add_trace(y =~ Recovered, name = 'Recovered', 
+fig <- fig %>% add_trace(y = ~Recovered, name = 'Recovered', 
                          mode = 'lines', type = 'scatter')
-fig <- fig %>% add_trace(y =~ Deaths, name = 'Deaths', 
+fig <- fig %>% add_trace(y = ~Deaths, name = 'Deaths', 
                          mode = 'lines', type = 'scatter')
 fig
 
@@ -184,7 +183,7 @@ plot_ly(data = latest, x =~Confirmed, y=~Deaths,
         color =~Country, 
         colors = heat.colors(n=10), 
         size =~Confirmed, 
-        marker = list(size =~1e3*death_rate))
+        marker = list(size =~1.5e3*death_rate))
 
 #Skippa att använda storlek eller färg - 
 #använd istället alla länders data (inte bara top 10) 
