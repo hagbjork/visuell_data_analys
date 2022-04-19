@@ -1,4 +1,0 @@
-R - plotly Covid, maps och KNN/regression
-
-Python - plotly KNN/regression
-

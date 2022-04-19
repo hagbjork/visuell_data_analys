@@ -4,7 +4,6 @@ library(ggplot2)
 library(mclust)
 library(factoextra)
 
-
 data <- as_tibble(read.csv("faithful.csv"))
 
 print(data)
@@ -15,7 +14,7 @@ print(data)
 #gaussiska distributioner
 ggplot(data, aes(eruptions, waiting)) + geom_point()# + geom_density2d(adjust = 0.3)
 
-
+#GaussianMixtureModels
 dens <- densityMclust(data)
 plot(dens)
 plot(dens, what = 'density', type = 'persp')

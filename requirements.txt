@@ -1,8 +1,13 @@
+dash
+django
 matplotlib
 numpy
 pandas
 scikit-learn
 scipy
 seaborn
+torch
+torchaudio
+torchvision
 umap-learn
 
