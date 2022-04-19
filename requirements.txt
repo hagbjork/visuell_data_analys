@@ -1,8 +1,10 @@
+chart_studio
 dash
 django
 matplotlib
 numpy
 pandas
+plotly
 scikit-learn
 scipy
 seaborn
