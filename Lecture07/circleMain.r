@@ -1,4 +1,3 @@
-source("circle.r")
 library(dbscan)
 
 

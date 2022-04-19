@@ -9,30 +9,43 @@ library(lubridate)
 
 data_daywise <- read_csv("daywise.csv")
 data_daywise$Date <- ymd(data_daywise$Date)
-
 head(data_daywise)
 
 #Sortera på Date istället för land
 data_daywise <- arrange(data_daywise, Date)
-
-
 head(data_daywise)
 
 
 #Gör en line plot av confirmed cases över tid.
+fig <- plot_ly(x = as.Date(data_daywise$Date), y = data_daywise$Confirmed, 
+               type = 'scatter',
+               mode = 'lines',
+               color = 'red')
+fig
 
-
+fig <- fig %>%  layout(title = 'Confirmed covid cases by date', 
+                       yaxis = list(title = 'Number of confirmed cases'), 
+                       xaxis = list(title = 'Date'))
+fig
 
 
 #Lägg med pipe operator till 3 lines med add_trace till fig - confirmed, recovered och deaths. Ser någonting konstigt ut?
 #Kan du spekulera om någon förklaring?
 fig <- plot_ly(data_daywise, x=~ Date)
+fig <- fig %>% add_trace(y = ~Confirmed, name = 'Confirmed')
+fig <- fig %>% add_trace(y = ~Recovered, name = 'Recovered')
+fig <- fig %>% add_trace(y = ~Deaths, name = 'Deaths')
+fig
 
+#Aug 4 2021 så går recovered från 130.899milj till 0. 
 
 
 #Add_trace tar också in line som argument - en lista där vi kan inkludera färg och storlek.
 #Justera linjernas form och färg genom att göra 3 listor och lägg till i figuren.
-
+conf_list <- list(color ='green', size = 1)
+rec_list <- list(color = 'blue', size = 1)
+deaths_list <- list(color = 'red', size = 1)
+fig <- fig %>% add_trace
 
 
 
