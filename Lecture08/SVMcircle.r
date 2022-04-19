@@ -72,6 +72,8 @@ all_data$y_vals <- NULL
 plot(svmfit, all_data)
 
 # Kan transformera tillbaka med kartesiska koordinater
-all_data <- all_data %>% mutate(x = radius * cos(angle), y = radius * sin(angle))
-sc <- ggplot(all_data, aes(x, y)) + geom_point(aes(color = label))
+all_data <- all_data %>% mutate(x = radius * cos(angle), 
+                                y = radius * sin(angle))
+sc <- ggplot(all_data, aes(x, y)) + 
+  geom_point(aes(color = label))
 sc
