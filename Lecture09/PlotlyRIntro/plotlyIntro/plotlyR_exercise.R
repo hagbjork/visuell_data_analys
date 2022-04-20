@@ -32,9 +32,12 @@ fig
 #Lägg med pipe operator till 3 lines med add_trace till fig - confirmed, recovered och deaths. Ser någonting konstigt ut?
 #Kan du spekulera om någon förklaring?
 fig <- plot_ly(data_daywise, x=~ Date)
-fig <- fig %>% add_trace(y = ~Confirmed, name = 'Confirmed')
-fig <- fig %>% add_trace(y = ~Recovered, name = 'Recovered')
-fig <- fig %>% add_trace(y = ~Deaths, name = 'Deaths')
+fig <- fig %>% add_trace(y = ~Confirmed, name = 'Confirmed',
+                         mode = 'lines', type = 'scatter')
+fig <- fig %>% add_trace(y = ~Recovered, name = 'Recovered',
+                         mode = 'lines', type = 'scatter')
+fig <- fig %>% add_trace(y = ~Deaths, name = 'Deaths',
+                         mode = 'lines', type = 'scatter')
 fig
 
 #Aug 4 2021 så går recovered från 130.899milj till 0. 
@@ -42,12 +45,21 @@ fig
 
 #Add_trace tar också in line som argument - en lista där vi kan inkludera färg och storlek.
 #Justera linjernas form och färg genom att göra 3 listor och lägg till i figuren.
-conf_list <- list(color ='green', size = 1)
-rec_list <- list(color = 'blue', size = 1)
-deaths_list <- list(color = 'red', size = 1)
-fig <- fig %>% add_trace
+conf.list <- list(color ='green', width = 2)
+rec.list <- list(color = 'blue', width = 2)
+deaths.list <- list(color = 'red', width = 2)
 
-
+fig <- plot_ly(data_daywise, x=~ Date)
+fig <- fig %>% add_trace(y =~ Confirmed, name = 'Confirmed', 
+                         mode = 'lines', type = 'scatter', 
+                         line = conf.list)
+fig <- fig %>% add_trace(y =~ Recovered, name = 'Recovered', 
+                         mode = 'lines', type = 'scatter', 
+                         line = rec.list)
+fig <- fig %>% add_trace(y =~ Deaths, name = 'Deaths', 
+                         mode = 'lines', type = 'scatter', 
+                         line = deaths.list)
+fig
 
 #Lägg till ett layoutargument med pipe operator som ger en titel och xaxis/yaxis titlar
 
