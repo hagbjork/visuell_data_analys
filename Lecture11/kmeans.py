@@ -1,29 +1,25 @@
 import seaborn as sns
 from sklearn.cluster import KMeans
-from sklearn.cluster import dbscan
 from sklearn.metrics import silhouette_score
 from sklearn.metrics import calinski_harabasz_score
 from sklearn.metrics import davies_bouldin_score
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
-#from yellowbrick.cluster import SilhouetteVisualizer
 
 plot = True
 
-file = 'data5.csv'
-data = np.asarray(pd.read_csv(file))
-data2 = pd.read_csv(file)
+file = 'Lecture11/data/data5.csv'
+# data = np.asarray(pd.read_csv(file))
+data = pd.read_csv(file)
 
 if plot:
-    plt.scatter(data[:,0], data[:, 1])
+    plt.scatter(data['X'], data['Y'])
     plt.title(file)
     plt.show()
 
-    sns.pairplot(data2)
+    sns.pairplot(data)
     plt.show()
-
-
 
 elbow_metrics = []
 silhouette_metrics = []
@@ -32,11 +28,11 @@ db_metrics = []
 min = 2
 max = 8
 all_labels = []
-for i in range(min,max):
+for i in range(min, max):
     kmeans = KMeans(n_clusters=i, random_state=0).fit(data)
     labels = kmeans.labels_
     all_labels.append(labels)
-    full_data = np.append(data, labels.reshape(-1,1), axis = 1)
+    # full_data = np.append(data, labels.reshape(-1,1), axis = 1)
 
     sse = kmeans.inertia_
     elbow_metrics.append(sse)
